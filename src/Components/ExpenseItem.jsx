@@ -1,7 +1,9 @@
 // ExpenseDetails.js
-function ExpenseDetails(props) {
+import ExpenseDate from "./ExpenseDate";
+function ExpenseItem(props) {
   return (
     <div className="expense-details">
+      <ExpenseDate date={props.date}/>
       <p>{props.title}</p>
       <p>{props.amount}</p>
       <p>{props.LocationOfExpenditure}</p>
@@ -9,4 +11,4 @@ function ExpenseDetails(props) {
   );
 }
 
-export default ExpenseDetails;
+export default ExpenseItem;

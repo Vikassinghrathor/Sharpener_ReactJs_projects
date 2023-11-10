@@ -1,6 +1,5 @@
 
-import Expense from './Components/Expense';
-
+import ExpenseItem from "./Components/ExpenseItem";
 
 function App() {
   const ItemArr = [
@@ -29,7 +28,7 @@ function App() {
   return (
     <div className="App">
     {ItemArr.map((item) => (
-        <Expense
+        <ExpenseItem
           key={item.id}
           id={item.id}
           title={item.title}
