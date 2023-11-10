@@ -8,19 +8,22 @@ function App() {
     id: 'e1',
     title: 'Expenses',
     amount: '100',
-    LocationOfExpenditure : 'Cricket'
+    LocationOfExpenditure : 'Cricket',
+    date: new Date(2023,2,10)
     },
     {
       id: 'e2',
       title: 'Expenses',
       amount: '100',
-      LocationOfExpenditure : 'Football'
+      LocationOfExpenditure : 'Football',
+      date: new Date(2023,2,20)
     },
     {
       id: 'e3',
       title: 'Expenses',
       amount: '100',
-      LocationOfExpenditure : 'badminton'
+      LocationOfExpenditure : 'badminton',
+      date: new Date(2023,2,28)
     }
 ]
   return (
@@ -32,6 +35,7 @@ function App() {
           title={item.title}
           amount={item.amount}
           LocationOfExpenditure={item.LocationOfExpenditure}
+          date={item.date}
         />
       ))}
     </div>
