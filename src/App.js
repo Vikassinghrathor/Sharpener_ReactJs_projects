@@ -1,42 +1,34 @@
+import React from 'react';
 
-import ExpenseItem from "./Components/Expense/ExpenseItem";
+import Expenses from './Components/Expense/Expense';;
 
-function App() {
-  const ItemArr = [
+const App = () => {
+  const expenses = [
     {
-    id: 'e1',
-    title: 'Expenses',
-    amount: '100',
-    LocationOfExpenditure : 'Cricket',
-    date: new Date(2023,2,10)
+      id: 'e1',
+      title: 'Toilet Paper',
+      amount: 94.12,
+      date: new Date(2020, 7, 14),
     },
-    {
-      id: 'e2',
-      title: 'Expenses',
-      amount: '100',
-      LocationOfExpenditure : 'Football',
-      date: new Date(2023,2,20)
-    },
+    { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
     {
       id: 'e3',
-      title: 'Expenses',
-      amount: '100',
-      LocationOfExpenditure : 'badminton',
-      date: new Date(2023,2,28)
-    }
-]
+      title: 'Car Insurance',
+      amount: 294.67,
+      date: new Date(2021, 2, 28),
+    },
+    {
+      id: 'e4',
+      title: 'New Desk (Wooden)',
+      amount: 450,
+      date: new Date(2021, 5, 12),
+    },
+  ];
+
   return (
-    <div className="App">
-    {ItemArr.map((item) => (
-        <ExpenseItem
-          key={item.id}
-          id={item.id}
-          title={item.title}
-          amount={item.amount}
-          LocationOfExpenditure={item.LocationOfExpenditure}
-          date={item.date}
-        />
-      ))}
+    <div>
+      <h2>Let's get started!</h2>
+      <Expenses items={expenses} />
     </div>
   );
 }

@@ -1,15 +1,19 @@
-// ExpenseDetails.js
-import ExpenseDate from "../Expense/ExpenseDate";
-import Card from "../UI/Card";
+import ExpenseDate from './ExpenseDate';
+import './ExpenseItem.css';
+import Card from '../UI/Card';
+
 function ExpenseItem(props) {
+  const clickHandler = () => {
+    console.log('clicked');
+  };
   return (
-    <Card>
-    <div className="expense-details">
-      <ExpenseDate date={props.date}/>
-      <p>{props.title}</p>
-      <p>{props.amount}</p>
-      <p>{props.LocationOfExpenditure}</p>
-    </div>
+    <Card className='expense-item'>
+      <ExpenseDate date={props.date} />
+      <div className='expense-item__description'>
+        <h2>{props.title}</h2>
+        <div className='expense-item__price'>${props.amount}</div>
+      </div>
+      <button onClick={clickHandler}>Change Title</button>
     </Card>
   );
 }
