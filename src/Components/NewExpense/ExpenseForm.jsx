@@ -13,16 +13,28 @@ const ExpenseForm = () => {
   function updateDate(event){
     setenteredDate(event.target.value);
   }
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    const expenseData = {
+      title: enteredtitle,
+      amount: enteredAmount,
+      date: new Date(enteredDate)
+    };
+
+    console.log(expenseData);
+  };
   return (
     <div>
-      <form>
+      <form onSubmit={submitHandler}>
         <label>Expense title</label>
         <input type='text' onChange={updateTitle} value={enteredtitle}/>
         <label>Expense Amount</label>
         <input type='number' onChange={updateAmount} value={enteredAmount} />
         <label>Expense Date</label>
         <input type='date' onChange={updateDate} value={enteredDate}/>
-        <button>Add Expense</button>
+        <button type='submit'>Add Expense</button>
       </form>
     </div>
   )
