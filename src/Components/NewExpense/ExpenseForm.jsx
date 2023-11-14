@@ -1,21 +1,27 @@
 import React, { useState } from 'react'
 
 const ExpenseForm = () => {
-  const[newInput,setnewInput] = useState('');
-  function updateInput(event){
-    const inputData = event.target.value;
-    setnewInput(inputData);
-    console.log(inputData);
+  const[enteredtitle,setenteredtitle] = useState('');
+  const[enteredAmount,setenteredAmount] = useState('');
+  const[enteredDate,setenteredDate] = useState('');
+  function updateTitle(event){
+    setenteredtitle(event.target.value);
+  }
+  function updateAmount(event){
+    setenteredAmount(event.target.value);
+  }
+  function updateDate(event){
+    setenteredDate(event.target.value);
   }
   return (
     <div>
       <form>
         <label>Expense title</label>
-        <input type='text' onChange={updateInput} value={newInput}/>
+        <input type='text' onChange={updateTitle} value={enteredtitle}/>
         <label>Expense Amount</label>
-        <input type='number' onChange={updateInput} value={newInput} />
+        <input type='number' onChange={updateAmount} value={enteredAmount} />
         <label>Expense Date</label>
-        <input type='date' onChange={updateInput} value={newInput}/>
+        <input type='date' onChange={updateDate} value={enteredDate}/>
         <button>Add Expense</button>
       </form>
     </div>
